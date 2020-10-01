@@ -27,6 +27,8 @@ RUN apt-get update \
        python3-gi \
     && rm -rf /var/lib/apt/lists/*
 
+RUN c_rehash -v /etc/ssl/certs/
+
 USER wirepas
 
 ENV PATH="/home/wirepas/.local/bin:${PATH}"
