@@ -2,7 +2,10 @@ name: build base builder
 
 on:
   push:
-    branches: master
+    branches:
+      - master
+      # TO BE REMOVED BEFORE MERGED
+      - docker_rework
     paths:
       - '.github/workflows/docker_base_builder.yml'
       - 'docker/base_builder/Dockerfile'
