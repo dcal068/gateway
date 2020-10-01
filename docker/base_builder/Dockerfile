@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM debian:buster
 
 RUN useradd -ms /bin/bash wirepas
 
