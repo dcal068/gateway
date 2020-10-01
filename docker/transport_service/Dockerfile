@@ -1,4 +1,4 @@
-FROM wirepas/gateway_base_builder:edge AS builder
+FROM wirepas/gateway_base_builder:latest AS builder
 
 COPY --chown=wirepas ./python_transport /home/wirepas/python_transport
 WORKDIR /home/wirepas/python_transport
@@ -17,7 +17,7 @@ RUN pip3 install --no-deps wirepas_messaging==1.2.0 --user
 RUN sed -i.bak '/wirepas_messaging/d' requirements.txt
 RUN pip3 install -r requirements.txt --no-deps dist/wirepas_gateway*.whl --user
 
-FROM ubuntu:20.04
+FROM debian:buster-slim
 
 RUN useradd -ms /bin/bash wirepas
 

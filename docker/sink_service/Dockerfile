@@ -1,4 +1,4 @@
-FROM wirepas/gateway_base_builder:edge AS builder
+FROM wirepas/gateway_base_builder:latest AS builder
 
 WORKDIR /home/wirepas
 
@@ -8,7 +8,7 @@ WORKDIR /home/wirepas/sink_service
 
 RUN make
 
-FROM ubuntu:20.04
+FROM debian:buster-slim
 
 RUN useradd -ms /bin/bash wirepas
 RUN usermod -a -G dialout wirepas
