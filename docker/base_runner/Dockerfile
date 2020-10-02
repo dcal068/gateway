@@ -33,8 +33,8 @@ WORKDIR protobuf-$PROTOBUF_VERSION
 
 # Build the cpp part
 RUN ./configure
-RUN make
-RUN make check
+RUN make -j7
+#RUN make check 
 RUN make install
 RUN ldconfig
 
