@@ -44,7 +44,7 @@ RUN protoc --version
 WORKDIR python
 
 RUN python3 setup.py build --cpp_implementation
-RUN python3 setup.py test --cpp_implementation
+#RUN python3 setup.py test --cpp_implementation
 RUN python3 setup.py sdist bdist_wheel --cpp_implementation
 
 
