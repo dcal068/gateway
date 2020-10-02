@@ -20,6 +20,7 @@ on:
 
 env:
   IMAGE_NAME: 'wirepas/gateway_sink_service'
+  DOCKER_BUILDKIT: 1
 
 jobs:
   build:
@@ -68,3 +69,16 @@ jobs:
           tags: |
             ${{ env.TAG1 }}
             ${{ env.TAG2 }}
+
+      - name: Build and extract binaries
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: docker/sink_service/Dockerfile
+          platforms: linux/amd64,linux/arm
+          push: false
+          target: export
+          outputs: ./artefacts
+
+      - name: Handle artefacts
+        run: ls -l ./artefacts
