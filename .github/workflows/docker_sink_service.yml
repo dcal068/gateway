@@ -80,4 +80,4 @@ jobs:
           platforms: linux/amd64,linux/arm
           push: false
           target: export
-          outputs: type=docker,dest=out
+          outputs: type=tar,dest=out
