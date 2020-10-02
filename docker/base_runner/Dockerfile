@@ -18,6 +18,7 @@ RUN apt-get update \
        wget \
        python3 \
        python3-pip \
+       python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m pip install wheel setuptools
