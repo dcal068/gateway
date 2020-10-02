@@ -52,7 +52,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: docker/base_builder/Dockerfile
+          file: docker/base_runner/Dockerfile
           platforms: linux/amd64,linux/arm
           build-args: PROTOBUF_VERSION=3.10.0
           push: true
