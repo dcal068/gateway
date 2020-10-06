@@ -83,7 +83,7 @@ jobs:
           outputs: ./artifacts
 
       - name: Store artefacts locally
-        uses: actions/upload-artifacts@v2
+        uses: actions/upload-artifact@v2
         with:
            name: sink_service_binary
            path: ./artifacts/
